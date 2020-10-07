@@ -1,0 +1,11 @@
+
+client.on('message', async message => {
+  if(message.channel.type === 'dm') return console.log('DM Mesajı');
+  if(!await db.has("sa-as" + message.guild.id)) return;
+  const açık = db.fetch("sa-as" + message.guild.id)
+  if (açık === 'açık') {
+  if (message.content.toLowerCase() === 'sa') {
+    message.channel.send('Aleyküm Selam Hoşgeldin')
+  }
+}
+})
